@@ -27,5 +27,15 @@ namespace MoodAnalyserTest
             Assert.AreEqual(compare, expected);
 
         }
+        [TestMethod]
+        public void TestNullMood()
+        {
+            string message = null;
+            MoodAnalyser mood = new MoodAnalyser(message);
+            string comapre = "happy";
+            string expected = mood.AnalyzeMood();
+            Assert.AreEqual(comapre,expected);
+        }
+
     }
 }
