@@ -26,42 +26,23 @@ namespace MoodAnalyserTest
             string expected = mood.AnalyzeMood();
             Assert.AreEqual(compare, expected);
         }
-        [TestMethod]
-        public void TestNullMood()
-        {
-            string message = null;
-            MoodAnalyser mood = new MoodAnalyser(message);
-            string comapre = "happy";
-            string expected = mood.AnalyzeMood();
-            Assert.AreEqual(comapre, expected);
-        }
+        
         [TestMethod]
         public void TestCustomNullException()
         {
-            string compare = "Mood should not be Null";
-            try
-            {
-                MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-                moodAnalyser.AnalyzeMood();
-            }
-            catch(CustomException ex)
-            {
-                Assert.AreEqual(compare, ex.Message);
-            }
+            string compare = "Mood should not be null";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+            string expected=moodAnalyser.AnalyzeMood();
+            Assert.AreEqual(compare, expected);
+            
         }
         [TestMethod]
         public void TestCustomEmptyException()
         {
             string compare = "Mood should not be empty";
-            try
-            {
-                MoodAnalyser moodAnalyser = new MoodAnalyser(string.Empty);
-                moodAnalyser.AnalyzeMood();
-            }
-            catch (CustomException ex)
-            {
-                Assert.AreEqual(compare, ex.Message);
-            }
+            MoodAnalyser moodAnalyser = new MoodAnalyser(string.Empty);
+            Assert.AreEqual(compare, moodAnalyser.AnalyzeMood());
+            
         }
     }
 }

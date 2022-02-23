@@ -17,6 +17,10 @@ namespace MoodAnalyserProgram
         {
             try
             {
+                if (message==null)
+                {
+                    throw new CustomException(CustomException.ExceptionType.NULL_EXCEPTION, "Mood should not be null");
+                }
                 if (message.Equals(string.Empty))
                 {
                     throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
@@ -30,9 +34,9 @@ namespace MoodAnalyserProgram
                     return "sad";
                 }
             }
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
-                return "happy";
+                return ex.Message;
             }
 
 
