@@ -12,7 +12,11 @@ namespace MoodAnalyserProgram
     {
         public static object CreateMoodAnalyserObject(string className, string constructor)
         {
+<<<<<<< HEAD
             string pattern = @"." + constructor + "$";
+=======
+            string pattern = @"." + constructor + "$" ;
+>>>>>>> UC5ParameterizedConst
             Match result = Regex.Match(className, pattern);
             if (result.Success)
             {
@@ -21,7 +25,11 @@ namespace MoodAnalyserProgram
                     Assembly assembly = Assembly.GetExecutingAssembly();
                     Type moodAnalyserType = assembly.GetType(className);
                     var res = Activator.CreateInstance(moodAnalyserType);
+<<<<<<< HEAD
                     return res ;
+=======
+                    return res;
+>>>>>>> UC5ParameterizedConst
                 }
                 catch (Exception ex)
                 {
