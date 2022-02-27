@@ -42,40 +42,6 @@ namespace MoodAnalyserTest
             MoodAnalyser moodAnalyser = new MoodAnalyser(string.Empty);
             Assert.AreEqual(compare, moodAnalyser.AnalyzeMood());
 
-<<<<<<< HEAD
-        }
-        [TestMethod]
-        public void ClassReturnObject()
-        {
-            object compare = new MoodAnalyser();
-            object obj = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyserProgram.MoodAnalyser", "MoodAnalyser");
-            var compareType=compare.GetType();
-            var objType=obj.GetType();
-            Assert.AreEqual(compareType, objType);
-        }
-        [TestMethod]
-        public void ImproperClassName()
-        {
-            
-            object expected = new MoodAnalyser();
-            object obj = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyserProgram.Mood","MoodAnalyer");
-            var compareType=expected.GetType();
-            var objType = obj.GetType();
-            //expected.Equals(obj);
-            Assert.AreEqual(compareType,objType);
-        }
-        [TestMethod]
-        public void ImproperConstructorName()
-        {
-            object expected = new MoodAnalyser();
-            object obj = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyserProgram.MoodAnalyser","Mood");
-            var comparerType=expected.GetType();
-            var objType = obj.GetType();
-            //expected.Equals(obj);
-            Assert.AreEqual(comparerType,objType) ;
-
-        }
-=======
         }
         [TestMethod]
         public void ClassReturnObject()
@@ -144,7 +110,6 @@ namespace MoodAnalyserTest
                 Assert.AreEqual(expected, actual1.Message);
             }
         }
->>>>>>> UC5ParameterizedConst
 
 
     }
