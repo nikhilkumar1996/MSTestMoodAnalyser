@@ -12,7 +12,7 @@ namespace MoodAnalyserProgram
     {
         public static object CreateMoodAnalyserObject(string className, string constructor)
         {
-            string pattern = @"." + constructor + "$";
+            string pattern = @"." + constructor + "$" ;
             Match result = Regex.Match(className, pattern);
             if (result.Success)
             {

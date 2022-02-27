@@ -40,7 +40,7 @@ namespace MoodAnalyserProgram
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return ex.Message ;
             }
 
 
